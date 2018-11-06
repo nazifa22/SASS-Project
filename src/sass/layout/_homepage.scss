@@ -1,0 +1,437 @@
+@import 'base/_color';
+@import 'base/_variables';
+@import 'base/_reset';
+@import 'layout/_extend';
+@import 'layout/_mixin';
+
+body {
+	font-family: $body-font;
+}
+
+/* Header*/
+header {
+	.menu {
+		background-color: $white !important;
+
+		ul {
+			li {
+				a {
+					text-transform: uppercase !important;
+					font-size: $regular-font !important;
+					font-weight: bold !important;
+					color: $dark;
+				}
+			}
+		}
+	}
+	.navbar-brand {
+		width: 8%;
+
+		@include respond-to(landscape-tablets) {
+			width: 8% !important;
+		}
+
+		@include respond-to(tablets) {
+			width: 15% !important;
+		}
+
+		@include respond-to(handhelds) {
+			width: 18% !important;
+		}
+	}
+}
+/*Header*/
+
+/*Banner*/
+.banner-section {
+	text-align: center;
+	color: $white;
+
+	.banner-1 {
+		background: url(../../images/banner-1.jpg);
+	    background-size: cover;
+	    padding: 210px 0;
+	    border-right: 4px solid $white;
+
+		@include respond-to(handhelds) {
+			border: 0px !important;
+			text-align: center !important;
+	    	padding-left: 0px !important;
+		    padding: 90px 0 !important;
+		}
+
+	    button {
+	    	color: $brand-color !important;
+	    	@extend %button;
+	    }
+	}
+
+	.banner-2 {
+		background: url(../../images/banner-2.jpg);
+	    @extend %side-banner;
+	    border-bottom: 4px solid $white;
+
+	    @include respond-to(handhelds) {
+	    	text-align: center !important;
+			padding-left: 0px !important;
+			border-bottom: 0px !important;
+	    }
+
+	    a {
+	    	&::before {
+	    		@extend %banner-design;
+			    width: 108px;
+			}
+	    }
+	}
+
+	.banner-3 {
+		background: url(../../images/meat.jpg);
+	    @extend %side-banner;
+
+	    @include respond-to(handhelds) {
+	    	text-align: center !important;
+			padding-left: 0px !important;
+	    }
+
+	    a {
+	    	&::before {
+	    		@extend %banner-design;
+			    width: 75px;
+			}
+	    }
+	}
+
+	.banner-2, .banner-3 {
+		a {
+			color: $white;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: $regular-font;
+		}
+	}
+}
+/*Banner*/
+
+/*Mission*/
+.mission-section {
+    background: url(../../images/coffee-quality-2018-banner-coffee-V3.png);
+    @extend %parallax;
+    color: #fff;
+
+    @include respond-to(handhelds) {
+    	text-align: center !important;
+    }
+
+    h1, span {
+    	color: $brand-color;
+    	text-align: center;
+    	display: block;
+    }
+
+    h1 {
+    	padding-bottom: 0px !important;
+    }
+
+    span {
+    	@extend %span;
+    	padding-bottom: 50px;
+
+    	@include respond-to(handhelds) {
+	    	padding-bottom: 20px !important;
+	    }
+    }
+
+    p {
+    	text-align: justify;
+    	color: $black;
+    }
+}
+/*Mission*/
+
+/*Stay Salty*/
+.salty-section {
+    background-color: $bgcolor-1;
+    background-image: url(../../images/appetizer-dark-delicious-326279.jpg);
+    @extend %static-banner;
+    color: $white;
+
+    @include respond-to(handhelds) {
+    	background-image: none !important;
+    	text-align: center !important;
+    }
+
+    button {
+		color: $brand-color !important;
+		@extend %button;
+	}
+}
+/*Stay Salty*/
+/*Team*/
+.team-section {
+	background: url(../../images/dish.jpg);
+	@extend %parallax;
+	text-align: center;
+	padding: 110px 0;
+
+	h1, h2 {
+		color: $brand-color;
+	}
+
+	h2 {
+		margin: 40px;
+	}
+
+	button {
+		@extend %button;
+		color: $white;
+		background-color: $dark-blue !important;
+		border: 1px solid $dark-blue !important;
+
+		&:hover {
+			color: $white !important;
+		}
+	}
+}
+/*Team*/
+/*Flavors*/
+.flavors-section {
+	@extend %static-banner;
+	background-image: url(../../images/pasta.jpg);
+	color: $white;
+	padding: 125px 0 !important;
+	text-align: center;
+
+	@include respond-to(handhelds) {
+    	text-align: center !important;
+    	background: #4d3d3d;
+    	background-image: none;
+
+    	img {
+	    	margin-top: 20px;
+	    }
+    }
+}
+/*Flavors*/
+/*Three Column*/
+.gray-section {
+	@extend %static-banner;
+	background-color: $bgcolor-2;
+	text-align: center;
+	color: $white;
+
+	img {
+		width: 50%;
+		height: auto;
+	}
+
+	button {
+		@extend %button;
+		color: $brand-color !important;
+		margin-top: 30px;
+	}
+
+	.icons {
+	    height: 90px;
+	}
+}
+/*Three Column*/
+/*Gallery*/
+.gallery-section {
+	@extend %static-banner;
+	text-align: center;
+	background-color: $gallery-bg;
+	color: $gallery-font;
+
+	.bg-color {
+		@extend %title;
+		font-size: $heading-two;
+		background-color: $brand-color;
+		color: $white;
+		padding: 10px 20px; 
+		display: inline-block !important;
+
+		@include respond-to(handhelds) {
+			font-size: $heading-two-mobile;
+		}
+	}
+
+	.span {
+		text-align: center;
+	}
+
+	.slider {
+	  margin: 100px 0;
+	}
+
+	.carousel-bg {
+	    width: 6% !important;
+	    opacity: 1 !important;
+	    background-color: $carousel-bg !important;
+	    height: 40% !important;
+	    border-radius: 58% !important;
+
+	    @include respond-to(handhelds) {
+			width: 7% !important;
+			height: 9% !important;
+		}
+
+		@include respond-to(tablets) {
+			height: 25% !important;
+		}
+
+
+	    span {
+	    	margin: 0px !important;
+	    }
+	}
+
+	.rounded-div {
+		margin-bottom: 50px;
+
+		&::before {
+			@extend %design;
+			background-color: $white !important;
+			width: 25px;
+			height: 25px;
+			border-radius: 25px;
+			margin-left: -15px;
+
+		}
+	}
+
+	span, p {
+		font-size: $regular-font;
+		text-align: left;
+	}
+
+	span {
+		color: $dark-blue;
+		display: block;
+		margin: 15px 0 5px;
+	}
+
+	button {
+		@extend %button;
+		background-color: $dark-blue !important;
+		color: $white !important;
+		margin: 20px 0 0;
+	}
+
+	img {
+		@include transition(.7s);
+
+		&:hover {
+			@include transition(.7s);
+    		@include transform(scale(1.05,1.05));
+		}
+	}
+}
+/*Gallery*/
+
+/*Footer Top*/
+.footer-top {
+	background-color: $footer-top;
+	padding: 40px 0;
+	color: $white;
+
+	p {
+		text-transform: uppercase;
+	}
+
+	input {
+		@include border-radius(0px);
+	}
+
+	button {
+		background-color: $brand-color !important;
+		border: 1px solid $brand-color !important;
+		@include border-radius(0px);
+	}
+}
+/*Footer Top*/
+/*Footer*/
+footer {
+	text-align: center;
+	@extend %static-banner;
+	background-color: $footer;
+	color: $white;
+	.footer {
+		 @include respond-to(handhelds) {
+			display: none;
+		}
+
+		p {
+			text-transform: uppercase;
+		}
+
+		a {
+			text-decoration: none;
+			font-size: $sub-title;
+			text-transform: capitalize;
+			color: $white;
+			text-align: left;
+			line-height: 40px;
+
+			&:hover {
+			    color: $white;
+			    text-decoration: none;
+			}
+		}
+
+		.facebook {
+		    padding: 10px 12px;
+		    @extend %social-icons;
+
+		    @include respond-to(tablets) {
+				border: none;
+			}
+		}
+
+		.twitter, .youTube {
+			padding: 10px;
+		    @extend %social-icons;
+
+		    @include respond-to(tablets) {
+				margin:5px 10px;
+				display: block;
+				border: none;
+			}
+		}
+	}
+
+	.copyright {
+		margin-top: 50px;
+	    border-top: 1px solid $border;
+	    padding-top: 30px;
+
+	    @include respond-to(handhelds) {
+			margin-top: 0px;
+		    border-top: none;
+		    padding-top: 0px;
+		}
+	}
+}
+/*Footer*/
+
+h1 {
+	@extend %title;
+	font-size: $heading-one;
+
+	@include respond-to(handhelds) {
+		font-size: $heading-one-mobile;
+	}
+}
+
+h2 {
+	@extend %title;
+	font-size: $heading-two; 
+
+	@include respond-to(handhelds) {
+		font-size: $heading-two-mobile;
+	}
+}
+
+p {
+	font-size: $text;
+}
