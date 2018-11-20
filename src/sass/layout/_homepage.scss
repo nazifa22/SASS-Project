@@ -12,9 +12,16 @@ body {
 header {
 	.menu {
 		background-color: $white !important;
+		@include respond-to(normalDevices) {
+			padding: .5rem 4rem !important;
+		}
 
 		ul {
 			li {
+				@include respond-to(normalDevices) {
+					padding: 0 10px !important;
+				}
+
 				a {
 					text-transform: uppercase !important;
 					font-size: $regular-font !important;
@@ -25,7 +32,7 @@ header {
 		}
 	}
 	.navbar-brand {
-		width: 8%;
+		width: 15%;
 
 		@include respond-to(landscape-tablets) {
 			width: 8% !important;
@@ -63,6 +70,10 @@ header {
 	    button {
 	    	color: $brand-color !important;
 	    	@extend %button;
+
+	    	&:hover {
+	    		@extend %button-white-hover;
+	    	}
 	    }
 	}
 
@@ -164,6 +175,9 @@ header {
     button {
 		color: $brand-color !important;
 		@extend %button;
+		&:hover {
+    		@extend %button-white-hover;
+    	}
 	}
 }
 /*Stay Salty*/
@@ -189,7 +203,7 @@ header {
 		border: 1px solid $dark-blue !important;
 
 		&:hover {
-			color: $white !important;
+			@extend %button-hover;
 		}
 	}
 }
@@ -229,6 +243,10 @@ header {
 		@extend %button;
 		color: $brand-color !important;
 		margin-top: 30px;
+
+		&:hover {
+    		@extend %button-white-hover;
+    	}
 	}
 
 	.icons {
@@ -314,8 +332,13 @@ header {
 	button {
 		@extend %button;
 		background-color: $dark-blue !important;
+		border: 1px solid $dark-blue !important;
 		color: $white !important;
 		margin: 20px 0 0;
+
+		&:hover {
+    		@extend %button-hover;
+    	}
 	}
 
 	img {
@@ -341,18 +364,22 @@ header {
 
 	input {
 		@include border-radius(0px);
+		font-size: 12px !important;
+		padding: 20px 10px !important;
 	}
 
 	button {
 		background-color: $brand-color !important;
 		border: 1px solid $brand-color !important;
 		@include border-radius(0px);
+		margin-left: -90px !important;
+	    position: absolute;
+	    margin-top: 2px !important;
 	}
 }
 /*Footer Top*/
 /*Footer*/
 footer {
-	text-align: center;
 	@extend %static-banner;
 	background-color: $footer;
 	color: $white;
@@ -372,6 +399,7 @@ footer {
 			color: $white;
 			text-align: left;
 			line-height: 40px;
+			display: block;
 
 			&:hover {
 			    color: $white;
@@ -401,6 +429,7 @@ footer {
 	}
 
 	.copyright {
+		text-align: center;
 		margin-top: 50px;
 	    border-top: 1px solid $border;
 	    padding-top: 30px;
@@ -410,6 +439,10 @@ footer {
 		    border-top: none;
 		    padding-top: 0px;
 		}
+	}
+
+	.align-center {
+		text-align: center;
 	}
 }
 /*Footer*/

@@ -14,6 +14,18 @@
 	font-size: $regular-font !important;
     padding: 10px 35px !important;
     font-weight: bold !important;
+    cursor: pointer;
+}
+
+%button-hover {
+	background-color: transparent !important;
+	color: $dark-blue !important;
+}
+
+%button-white-hover {
+	background-color: transparent !important;
+	color: $white !important;
+	border: 1px solid $brand-color !important;
 }
 
 %side-banner {
