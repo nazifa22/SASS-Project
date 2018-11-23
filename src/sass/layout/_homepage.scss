@@ -250,7 +250,11 @@ header {
 	}
 
 	.icons {
-	    height: 90px;
+	    margin-bottom: 20px;
+
+	    svg {
+			font-size: 50px;
+		}
 	}
 }
 /*Three Column*/
@@ -279,23 +283,31 @@ header {
 	}
 
 	.slider {
-	  margin: 100px 0;
+	    margin: 50px 0 0;
+	    padding: 0 0 35px;
+	}
+
+	.slider-bottom {
+	    border-top: 1px solid $dark;
+	    padding-top: 50px;
 	}
 
 	.carousel-bg {
-	    width: 6% !important;
+	    width: 3% !important;
 	    opacity: 1 !important;
 	    background-color: $carousel-bg !important;
-	    height: 40% !important;
+	    height: 25% !important;
 	    border-radius: 58% !important;
 
 	    @include respond-to(handhelds) {
-			width: 7% !important;
-			height: 9% !important;
+			// width: 7% !important;
+			// height: 9% !important;
+			background-color: transparent !important;
 		}
 
 		@include respond-to(tablets) {
-			height: 25% !important;
+			// height: 25% !important;
+			background-color: transparent !important;
 		}
 
 
@@ -372,9 +384,11 @@ header {
 		background-color: $brand-color !important;
 		border: 1px solid $brand-color !important;
 		@include border-radius(0px);
-		margin-left: -90px !important;
+		margin-left: -91px !important;
 	    position: absolute;
-	    margin-top: 2px !important;
+	    margin-top: 2px!important;
+	    font-size: 10px;
+	    padding: 10px 25px;
 	}
 }
 /*Footer Top*/
@@ -383,18 +397,25 @@ footer {
 	@extend %static-banner;
 	background-color: $footer;
 	color: $white;
+	// text-align: center;
+
 	.footer {
 		 @include respond-to(handhelds) {
 			display: none;
 		}
 
+		img {
+			width: 90%;
+		}
+
 		p {
 			text-transform: uppercase;
+			font-size: $regular-font;
 		}
 
 		a {
 			text-decoration: none;
-			font-size: $sub-title;
+			font-size: $text;
 			text-transform: capitalize;
 			color: $white;
 			text-align: left;
@@ -411,7 +432,7 @@ footer {
 		    padding: 10px 12px;
 		    @extend %social-icons;
 
-		    @include respond-to(tablets) {
+		    @include respond-to(custom) {
 				border: none;
 			}
 		}
@@ -420,7 +441,7 @@ footer {
 			padding: 10px;
 		    @extend %social-icons;
 
-		    @include respond-to(tablets) {
+		    @include respond-to(custom) {
 				margin:5px 10px;
 				display: block;
 				border: none;
