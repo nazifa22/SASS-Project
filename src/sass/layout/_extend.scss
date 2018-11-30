@@ -6,6 +6,7 @@
 	text-transform: uppercase;
 	margin-bottom: 20px;
 	font-family: $title-font;
+	font-weight: 700;
 
 }
 
@@ -72,4 +73,10 @@
 	border: 1px solid $white;
     // margin: 10px;
     @include border-radius(24px);
+}
+
+%rounded-divs {
+	width: 215px;
+    height: 215px;
+    border-radius: 103px;
 }

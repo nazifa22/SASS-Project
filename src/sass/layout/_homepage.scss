@@ -157,6 +157,52 @@ header {
     	text-align: justify;
     	color: $black;
     }
+
+    .wrap-bg-1, .wrap-white, .wrap-bg-2 {
+    	@extend %rounded-divs;
+    }
+
+    .wrap-bg-1 {
+    	background-color: $rounded-div-bg;
+    	margin-left: 80px;
+    }
+
+    .wrap-white {
+    	position: absolute;
+	    top: 7px;
+	    left: 85px;
+	    z-index: 90;
+	    background-color: $white;
+	    font-family: $title-font;
+	    color: $dark-blue;
+	    padding: 50px 0 0 45px;
+
+	    h3 {
+	    	&::before {
+			    content: "";
+			    position: absolute;
+			    height: 18px;
+			    width: 18px;
+			    border: 2px solid #184f6e;
+			    border-radius: 10px;
+			    margin-top: 14px;
+			    left: 39px;
+			    z-index: -1;
+			}
+	    }
+
+	    svg {
+		    font-size: 15px;
+		    margin-right: 10px;
+		}
+    }
+
+    .wrap-bg-2 {
+		position: absolute;
+	    top: 14px;
+	    left: 75px;
+	    background-color: $rounded-div-bg;
+    }
 }
 /*Mission*/
 
@@ -293,7 +339,7 @@ header {
 	}
 
 	.carousel-bg {
-	    width: 3% !important;
+	    width: 4% !important;
 	    opacity: 1 !important;
 	    background-color: $carousel-bg !important;
 	    height: 25% !important;
@@ -509,6 +555,7 @@ h1 {
 h2 {
 	@extend %title;
 	font-size: $heading-two; 
+	font-weight: 600 !important;
 
 	@include respond-to(handhelds) {
 		font-size: $heading-two-mobile;
@@ -517,4 +564,8 @@ h2 {
 
 p {
 	font-size: $text;
+}
+
+h3 {
+	font-weight: 600 !important;
 }
