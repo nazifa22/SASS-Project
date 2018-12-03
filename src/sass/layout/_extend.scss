@@ -71,7 +71,6 @@
 
 %social-icons {
 	border: 1px solid $white;
-    // margin: 10px;
     @include border-radius(24px);
 }
 
@@ -79,4 +78,11 @@
 	width: 215px;
     height: 215px;
     border-radius: 103px;
+}
+
+%curly-lines {
+	position: absolute;
+    content: "〜〜〜〜〜";
+    font-size: 25px;
+    letter-spacing: -7px;
 }

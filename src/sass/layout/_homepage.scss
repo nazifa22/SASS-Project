@@ -130,10 +130,6 @@ header {
     @extend %parallax;
     color: #fff;
 
-    @include respond-to(handhelds) {
-    	text-align: center !important;
-    }
-
     h1, span {
     	color: $brand-color;
     	text-align: center;
@@ -165,6 +161,11 @@ header {
     .wrap-bg-1 {
     	background-color: $rounded-div-bg;
     	margin-left: 80px;
+    	opacity: 0.6;
+
+    	@include respond-to(custom) {
+	    	margin-left: 7px !important;
+	    }
     }
 
     .wrap-white {
@@ -177,17 +178,27 @@ header {
 	    color: $dark-blue;
 	    padding: 50px 0 0 45px;
 
+	    @include respond-to(custom) {
+	    	left: 14px !important;
+	    }
+
 	    h3 {
 	    	&::before {
 			    content: "";
 			    position: absolute;
 			    height: 18px;
 			    width: 18px;
-			    border: 2px solid #184f6e;
+			    border-top: 2px solid #184f6e;
+			    border-left: 2px solid #184f6e;
+			    border-bottom: 2px solid #184f6e;
 			    border-radius: 10px;
 			    margin-top: 14px;
 			    left: 39px;
 			    z-index: -1;
+
+			    @include respond-to(custom) {
+			    	text-align: left !important;
+			    }
 			}
 	    }
 
@@ -199,9 +210,14 @@ header {
 
     .wrap-bg-2 {
 		position: absolute;
-	    top: 14px;
-	    left: 75px;
+	    top: 16px;
+	    left: 77px;
+	    opacity: 0.6;
 	    background-color: $rounded-div-bg;
+
+	    @include respond-to(custom) {
+	    	left: 6px !important;
+	    }
     }
 }
 /*Mission*/
@@ -238,8 +254,16 @@ header {
 		color: $brand-color;
 	}
 
+	h1 {
+		&::after {
+			@extend %curly-lines;
+			top: 164px;
+    		left: 240px;
+		} 
+	}
+
 	h2 {
-		margin: 40px;
+		margin: 40px 0;
 	}
 
 	button {
@@ -270,6 +294,14 @@ header {
     	img {
 	    	margin-top: 20px;
 	    }
+    }
+
+    p {
+		&::after {
+			@extend %curly-lines;
+			top: 295px;
+			left: 240px;
+		} 
     }
 }
 /*Flavors*/
