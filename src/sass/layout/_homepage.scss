@@ -4,14 +4,24 @@
 @import 'layout/_extend';
 @import 'layout/_mixin';
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: $body-font;
 }
 
 /* Header*/
 header {
+	position: sticky;
+    top: 0;
+    z-index: 999;
+
 	.menu {
 		background-color: $white !important;
+		box-shadow: 0px 0px 6px 1px #ccc;
+		
 		@include respond-to(normalDevices) {
 			padding: .5rem 4rem !important;
 		}
@@ -254,16 +264,14 @@ header {
 		color: $brand-color;
 	}
 
-	h1 {
-		&::after {
-			@extend %curly-lines;
-			top: 164px;
-    		left: 240px;
-		} 
+	p {
+		top: 164px;
+     	left: 240px;
+     	@extend %curly-lines;
 	}
 
 	h2 {
-		margin: 40px 0;
+		margin: 20px 0 40px;
 	}
 
 	button {
@@ -296,12 +304,11 @@ header {
 	    }
     }
 
-    p {
-		&::after {
-			@extend %curly-lines;
-			top: 295px;
-			left: 14px;
-		} 
+    h2 {
+		@extend %curly-lines;
+		top: 295px;
+		left: 14px;
+		color: $white;
     }
 }
 /*Flavors*/
